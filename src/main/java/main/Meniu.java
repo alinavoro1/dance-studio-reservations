@@ -221,7 +221,7 @@ public class Meniu{
         for (int i = 0; i < clienti.size(); i++) {
             System.out.println((i + 1) + ". " + clienti.get(i).getNume());
         }
-        int indexClient = InputHelper.citesteIntInRange("Alege ID Client: ", 1, clienti.size()) - 1;
+        int indexClient = InputHelper.citesteIntInRange("Alege numarul clientului din lista: ", 1, clienti.size()) - 1;
         Client autor = clienti.get(indexClient);
 
         int nota = InputHelper.citesteIntInRange("Acorda o nota (1-5): ", 1, 5);
@@ -490,7 +490,7 @@ public class Meniu{
             for (int i = 0; i < listaClienti.size(); i++){
                 System.out.println((i+1) + ". " + listaClienti.get(i).getNume());
             }
-            int index = InputHelper.citesteIntInRange("Alege ID-ul clientului: ", 1, listaClienti.size()) -1;
+            int index = InputHelper.citesteIntInRange("Alege numarul clientului din lista: ", 1, listaClienti.size()) -1;
             clientAles = listaClienti.get(index);
         }
 
@@ -537,7 +537,7 @@ public class Meniu{
             for (int i = 0; i < listaClienti.size(); i++) {
                 System.out.println((i + 1) + ". " + listaClienti.get(i).getNume());
             }
-            int index = InputHelper.citesteIntInRange("Alege ID-ul clientului: ", 1, listaClienti.size()) - 1;
+            int index = InputHelper.citesteIntInRange("Alege numarul clientului din lista: ", 1, listaClienti.size()) - 1;
             clientAles = listaClienti.get(index);
         }
 
@@ -575,7 +575,7 @@ public class Meniu{
     }
 
     private Profesor alegeProfesor(){
-        List<Profesor> listaProfesori = new ArrayList<>(profesorService.getProfesori());
+        List<Profesor> listaProfesori = new ArrayList<>(profesorService.getProfesoriSortatiNume());
         if (listaProfesori.isEmpty()) {
             System.out.println("Nu exista profesori în sistem! Adauga un profesor din meniul principal mai intai.");
             return null;

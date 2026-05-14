@@ -32,6 +32,10 @@ public class ProfesorService {
         return profesorRepository.findAll();
     }
 
+    public Collection<Profesor> getProfesoriSortatiNume() {
+        return new TreeSet<>(profesorRepository.findAll());
+    }
+
     public void addStyleToProfesor(int profesorId, StilDans stil) {
         profesorRepository.addStyle(profesorId, stil);
         auditService.logAction("adauga_stil_profesor");
