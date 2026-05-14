@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: dance_studio_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dance_studio
+#      MYSQL_USER: dance_user
+#      MYSQL_PASSWORD: dance_password
+    ports:
+      - "3308:3306"
+    volumes:
+      - dance_data:/var/lib/mysql
+
+volumes:
+  dance_data:
